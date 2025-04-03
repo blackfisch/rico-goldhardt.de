@@ -1,0 +1,13 @@
+services:
+  ricog-web:
+    image: nginx:latest
+    container_name: ricog-web
+    hostname: ricogweb
+    volumes:
+      - ./src:/usr/share/nginx/html
+    networks:
+      - nginx-proxy
+
+networks:
+    nginx-proxy:
+        external: true
